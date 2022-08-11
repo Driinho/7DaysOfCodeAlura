@@ -97,20 +97,37 @@ header {
     margin: 7rem;
 }
 
-#botao_cadastrar {
-    background-color: #8e2424;
-    height: 100%;
-    color: #ffffff;
-}
-
-#botao_entrar {
-    background-color: #ffffff;
-}
-
 .botao_topo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
     width: 7rem;
     font-family: 'Inter', sans-serif;
+    margin: 5px;
+}
+
+#botao_cadastrar {
+    background-color: #8e2424;
+    height: 100%;
+    color: #ffffff;
+    transition: 1s;
+}
+
+#botao_cadastrar:hover {
+    background-color: #5f1313;
+    transform: scale(1.05);
+}
+
+#botao_entrar {
+    background-color: #ddd4d4;
+    height: 100%;
+    transition: 1s;
+}
+
+#botao_entrar:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
 }
