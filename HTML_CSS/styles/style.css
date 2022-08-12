@@ -16,6 +16,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
+    font-family: 'Inter', sans-serif;
 }
 
 #body_container {
@@ -81,7 +82,7 @@ header {
     height: 3px;
     width: 0;
     background-color: #8e2424;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
 }
 
 .nav_item:hover:before {
@@ -119,10 +120,11 @@ header {
 #botao_cadastrar:hover {
     background-color: #5f1313;
     transform: scale(1.05);
+    cursor: pointer;
 }
 
 #botao_entrar {
-    background-color: #ddd4d4;
+    background-color: #f5f5f5;
     height: 100%;
     transition: 1s;
 }
@@ -130,4 +132,66 @@ header {
 #botao_entrar:hover {
     background-color: #e0e0e0;
     transform: scale(1.05);
+    cursor: pointer;
+}
+
+#sobre_nos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 6rem;
+}
+
+#sobre_nos h3 {
+    color: #8E2424;
+    padding-bottom: 1.5rem;
+}
+
+#sobre_nos h1 {
+    font-size: 2.87rem;
+    padding-bottom: 2.26rem;
+}
+
+.container_content {
+    width: 50%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    color: #667085;
+    text-align: center;
+}
+
+#estatisticas {
+    display: flex;
+    width: 87%;
+    margin-top: 6.68rem;
+    gap: 1.25rem;
+}
+
+.card_est {
+    display: flex;
+    flex-direction: column;
+    width: 21.75rem;
+    transition: 1s;
+}
+
+.card_est:hover {
+    transform: scale(1.05);
+}
+
+#estatisticas h1 {
+    color: #8E2424;
+    padding-bottom: 1rem;
+}
+
+#estatisticas h3 {
+    color: #101828;
+    font-size: 1.125remS;
+}
+
+#estatisticas p {
+    color: #667085;
+    font-size: 1rem;
 }
