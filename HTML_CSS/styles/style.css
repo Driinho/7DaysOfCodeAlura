@@ -144,12 +144,14 @@ header {
     padding-top: 6rem;
 }
 
-#sobre_nos h3 {
+.titulo {
     color: #8E2424;
     padding-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
 }
 
-#sobre_nos h1 {
+.subtitulo {
     font-size: 2.87rem;
     padding-bottom: 2.26rem;
 }
@@ -194,4 +196,32 @@ header {
 #estatisticas p {
     color: #667085;
     font-size: 1rem;
+}
+
+#vagas_abertas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 6.25rem;
+}
+
+#vagas_abertas .titulo {
+    background-color: rgba(142, 36, 36, 0.05);;
+    padding: 4px 12px;
+    border-radius: 16px;
+}
+
+#vagas_abertas .subtitulo {
+    font-size: 36px;
+    margin-top: 1rem;
+}
+
+#vagas_abertas p {
+    font-size: 20px;
+    color: #667085;
+}
+
+#vagas_abertas img {
+    padding-top: 4rem;
 }
