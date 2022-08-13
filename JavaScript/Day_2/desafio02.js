@@ -16,35 +16,21 @@ let nome
 let idade
 let linguagemDeProgramacao
 
-var readline = require('readline')
-
-var leitor = readline.createInterface({
+const { devNull } = require('os')
+const readline = require('readline')
+const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 })
-
-leitor.question('Qual o seu nome ?\n', function (answer) {
-    nome = answer
-    leitor.close()
-})
-
-leitor.question('Qual a sua idade ?\n', function (answer) {
-    idade = answer
-    leitor.close()
-})
-
-leitor.question(
-    'Qual liguagem de programação você estuda ?\n',
-    function (answer) {
-        linguagemDeProgramacao = answer
-        console.log(
-            'Olá ' +
-                nome +
-                ' você tem ' +
-                idade +
-                ' anos e ja está aprendendo ' +
-                linguagemDeProgramacao
+rl.question('Qual o seu nome?', function (nome) {
+    rl.question('Qual a sua idade?', function (idade) {
+        rl.question(
+            'Qual linguagem de programação você está estudando?',
+            function (linguagemDeProgramacao) {
+                console.log(
+                    `Olá ${nome}, você tem ${idade} anos e já está aprendendo ${linguagemDeProgramacao}`
+                )
+            }
         )
-        leitor.close()
-    }
-)
+    })
+})
