@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.PrintWriter;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -10,6 +12,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import models.Filme;
+import page.HTMLGenerator;
 
 public class App {
 
@@ -47,7 +50,20 @@ public class App {
                     parseUrlImages(moviesArray).get(i),
                     parseNotas(moviesArray).get(i), parseAnos(moviesArray).get(i)));
         }
-        filmes.forEach(System.out::println);
+
+        File pagina = new File("src/page/Teste.html");
+        PrintWriter printWriter = new PrintWriter(pagina);
+        HTMLGenerator htmlGenerator = new HTMLGenerator(printWriter);
+
+        printWriter.println(htmlGenerator.headGenerator());
+        printWriter.println(htmlGenerator.navBarGenerator());
+        printWriter.println(htmlGenerator.carrosselGenerator());
+
+        for (int i = 0; i < filmes.size(); i++) {
+            htmlGenerator.generator(filmes.get(i));
+        }
+
+        printWriter.close();
     }
 
     private static String[] parseJsonMovies(String json) {
