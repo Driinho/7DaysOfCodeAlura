@@ -11,23 +11,24 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        String apiKey = "k_5kqx9t0s";
+        String apiKeyImdb = "k_5kqx9t0s";
+        String apiKeyMarvel = "4e37d9cbc7e9e317d5bfc25d030e3b6f";
 
-        String json = new ImdbApiClient(apiKey).getBody();
+        String json = new ImdbApiClient(apiKeyMarvel).getBody();
 
-        List<Filme> filmes = new ParseJson().parseJsonMovies(json);
-        File pagina = new File("src/page/Teste.html");
-        PrintWriter printWriter = new PrintWriter(pagina);
-        HTMLGenerator htmlGenerator = new HTMLGenerator(printWriter);
+        System.out.println(json);
+        // List<Filme> filmes = new ParseJson().parseJsonMovies(json);
 
-        printWriter.println(htmlGenerator.headGenerator());
-        printWriter.println(htmlGenerator.navBarGenerator());
-        printWriter.println(htmlGenerator.carrosselGenerator());
+        // File pagina = new File("src/page/Teste.html");
+        // PrintWriter printWriter = new PrintWriter(pagina);
+        // HTMLGenerator htmlGenerator = new HTMLGenerator(printWriter);
 
-        for (int i = 0; i < filmes.size(); i++) {
-            htmlGenerator.generator(filmes.get(i));
-        }
+        // printWriter.println(htmlGenerator.headGenerator());
+        // printWriter.println(htmlGenerator.navBarGenerator());
+        // // printWriter.println(htmlGenerator.carrosselGenerator());
 
-        printWriter.close();
+        // htmlGenerator.generator(filmes);
+
+        // printWriter.close();
     }
 }

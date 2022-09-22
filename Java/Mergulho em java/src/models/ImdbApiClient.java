@@ -10,17 +10,21 @@ public class ImdbApiClient {
 
     private String apiKey;
     private String apiImdb;
+    private String apiMarvel;
 
     public ImdbApiClient(String apiKey) {
         this.apiKey = apiKey;
-        this.apiImdb = "https://imdb-api.com/en/API/Top250Movies/" + apiKey;
+        // this.apiImdb = "https://imdb-api.com/en/API/Top250Movies/" + apiKey;
+        this.apiMarvel = "https://gateway.marvel.com/v1/public/stories?ts=1663863768&apikey=4e37d9cbc7e9e317d5bfc25d030e3b6f&hash=317cd121a9fbf8fb33437d9481ad4455";
+        // this.apiMarvel =
+        // "http://gateway.marvel.com/v1/public/comics?ts=1&apikey=1234&hash=ffd275c5130566a2916217b101f26150";
     }
 
     public String getBody() throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(apiImdb))
+                .uri(URI.create(apiMarvel))
                 .build();
 
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());

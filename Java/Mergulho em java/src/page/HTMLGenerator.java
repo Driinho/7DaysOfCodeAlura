@@ -1,6 +1,7 @@
 package page;
 
 import java.io.PrintWriter;
+import java.util.List;
 
 import models.Filme;
 
@@ -19,22 +20,22 @@ public class HTMLGenerator {
                     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
                     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"
                         crossorigin=\"anonymous\">
-                    <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"
-                        integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\"
-                        crossorigin=\"anonymous\"
-                    ></script>
-                    <script
-                        src=\"https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js\"
-                        integrity=\"sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49\"
-                        crossorigin=\"anonymous\"
-                    ></script>
-                    <script
-                        src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js\"
-                        integrity=\"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy\"
-                        crossorigin=\"anonymous\"
-                    ></script>
                 </head>
                 """;
+        // <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"
+        // integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\"
+        // crossorigin=\"anonymous\"
+        // ></script>
+        // <script
+        // src=\"https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js\"
+        // integrity=\"sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49\"
+        // crossorigin=\"anonymous\"
+        // ></script>
+        // <script
+        // src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js\"
+        // integrity=\"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy\"
+        // crossorigin=\"anonymous\"
+        // ></script>
         return head;
     }
 
@@ -79,49 +80,62 @@ public class HTMLGenerator {
         return navbar;
     }
 
-    public String carrosselGenerator() {
-        String carrossel = """
-                <div id="carouselExampleControls" class="carousel slide w-50" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src=\"https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX128_CR0,12,128,176_AL_.jpg" alt="First slide\">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src=\"https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX128_CR0,12,128,176_AL_.jpg" alt="Second slide\">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src=\"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX128_CR0,12,128,176_AL_.jpg" alt="Third slide\">
+    // public String carrosselGenerator() {
+    // String carrossel = """
+    // <div id="carouselExampleControls" class="carousel slide w-50"
+    // data-ride="carousel">
+    // <div class="carousel-inner">
+    // <div class="carousel-item active">
+    // <img class="d-block w-100"
+    // src=\"https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX128_CR0,12,128,176_AL_.jpg"
+    // alt="First slide\">
+    // </div>
+    // <div class="carousel-item">
+    // <img class="d-block w-100"
+    // src=\"https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX128_CR0,12,128,176_AL_.jpg"
+    // alt="Second slide\">
+    // </div>
+    // <div class="carousel-item">
+    // <img class="d-block w-100"
+    // src=\"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX128_CR0,12,128,176_AL_.jpg"
+    // alt="Third slide\">
+    // </div>
+    // </div>
+    // <a class="carousel-control-prev" href="#carouselExampleControls"
+    // role="button" data-slide="prev">
+    // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    // <span class="sr-only">Previous</span>
+    // </a>
+    // <a class="carousel-control-next" href="#carouselExampleControls"
+    // role="button" data-slide="next">
+    // <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    // <span class="sr-only">Next</span>
+    // </a>
+    // </div>
+    // """;
+    // return carrossel;
+    // }
+
+    public String generator(List<Filme> filmes) {
+        String divTemplate = "";
+        for (int i = 0; i < filmes.size(); i++) {
+            divTemplate = """
+                    <div class=\"card text-white bg-dark mb-3\" style=\"max-width: 18rem;\">
+                        <h4 class=\"card-header\">%s</h4>
+                        <div class=\"card-body\">
+                            <img class=\"card-img\" src=\"%s\" alt=\"%s\">
+                            <p class=\"card-text mt-2\">Nota: %s - Ano: %s</p>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-                """;
-        return carrossel;
-    }
+                    """;
 
-    public String generator(Filme filme) {
+            // usando o template com os dados do filme
+            printWriter.println(
+                    String.format(divTemplate, filmes.get(i).getTitulo(), filmes.get(i).getUrl(),
+                            filmes.get(i).getTitulo(), filmes.get(i).getNota(),
+                            filmes.get(i).getAno()));
+        }
 
-        String divTemplate = """
-                <div class=\"card text-white bg-dark mb-3\" style=\"max-width: 18rem;\">
-                    <h4 class=\"card-header\">%s</h4>
-                    <div class=\"card-body\">
-                        <img class=\"card-img\" src=\"%s\" alt=\"%s\">
-                        <p class=\"card-text mt-2\">Nota: %s - Ano: %s</p>
-                    </div>
-                </div>
-                """;
-
-        // usando o template com os dados do filme
-        printWriter.println(
-                String.format(divTemplate, filme.getTitulo(), filme.getUrl(), filme.getTitulo(), filme.getNota(),
-                        filme.getAno()));
         return divTemplate;
     }
 
