@@ -250,7 +250,7 @@ header {
 }
 
 #vagas .container-vagas .card_vaga {
-    border: 2px solid #EAECF0;
+    border: 2px solid #eaecf0;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -272,6 +272,51 @@ header {
     display: flex;
     gap: 1.5rem;
     color: #667085;
+}
+
+#depoimentos {
+    margin-top: 6rem;
+    padding: 4rem;
+    background-color: rgba(196, 25, 25, 0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+}
+
+#depoimentos .titulo {
+    padding-bottom: 1rem;
+}
+
+#depoimentos .container-depoimentos .depoimentos-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#depoimentos .texto-depoimento {
+    font-size: 36px;
+    display: flex;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+#depoimentos .avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+}
+
+.avatar-content {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar .avatar-work {
+    font-size: 14px;
 }
 
 .espaco {
